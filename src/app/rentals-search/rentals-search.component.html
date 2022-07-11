@@ -1,4 +1,13 @@
 <div>
   <input #searchBar type="text" placeholder="Search by location..">
-  <button type="button">Search</button>
+  <button type="button" (click)="search(searchBar.value)">Search</button>
+  <ul>
+    <li *ngFor="let rental of rentals$ | async">
+      <h3>Rental no. {{rental.id}}</h3>
+      <h4>Id: {{rental.id}}</h4>
+      <h4>Location: {{rental.location}}</h4>
+      <h4>Capacity: {{rental.capacity}}</h4>
+      <h4>Price: {{rental.price}}</h4>
+    </li>
+  </ul>
 </div>
