@@ -1,0 +1,10 @@
+<h2>Bookings List</h2>
+<ul>
+  <li *ngFor="let booking of bookings">
+    <h4>Booking no. {{booking.id}}</h4>
+    <h5>Id: {{booking.id}}</h5>
+    <h5>Rental id: {{booking.rental_id}}</h5>
+    <h5>No of people: {{booking.nrOfPeople}}</h5>
+    <mat-checkbox>Show photo</mat-checkbox>
+  </li>
+</ul>
