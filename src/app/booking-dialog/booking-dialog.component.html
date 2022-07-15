@@ -2,10 +2,10 @@
 <div mat-dialog-content>
   <p>How many people?</p>
   <mat-form-field appearance="fill">
-    <input matInput>
+    <input [(ngModel)]="nrOfPeople" matInput>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="onAddBooking()">Add</button>
+  <button mat-button mat-dialog-close (click)="onClose()">Close</button>
 </div>

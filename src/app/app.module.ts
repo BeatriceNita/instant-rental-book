@@ -15,6 +15,7 @@ import { RentalsComponent } from './rentals/rentals.component';
 import { RentalsSearchComponent } from './rentals-search/rentals-search.component';
 import { BookingDialogComponent } from './booking-dialog/booking-dialog.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BookingsComponent } from './bookings/bookings.component';
     RentalsSearchComponent,
     DashboardComponent,
     BookingDialogComponent,
-    BookingsComponent
+    BookingsComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

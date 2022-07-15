@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 import { Observable, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { Rental } from '../entities/rental';
 import { RentalService } from '../services/rental.service';
-
+import { Booking } from '../entities/booking';
+import { BookingService } from '../services/booking.service';
 import { BookingDialogComponent } from '../booking-dialog/booking-dialog.component';
 
 @Component({
@@ -16,11 +17,14 @@ import { BookingDialogComponent } from '../booking-dialog/booking-dialog.compone
 })
 export class RentalsSearchComponent implements OnInit {
   rentals$!: Observable<Rental[]>;
+  color: string = '#6495ED';
+
   private searchTerms = new Subject<string>();
 
   constructor(
+    public dialog: MatDialog,
     private rentalService: RentalService,
-    public dialog: MatDialog
+    private bookingService: BookingService
   ) { }
 
   ngOnInit(): void {
@@ -30,17 +34,8 @@ export class RentalsSearchComponent implements OnInit {
     );
   }
 
-  openDialog(): void {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    dialogConfig.position = {
-        'top': '0',
-        left: '0'
-    };
-
+  openDialog(rental_id: number): void {
+    rental_id = this.bookingService.getRentalId();
     this.dialog.open(BookingDialogComponent);
   }
 

@@ -10,6 +10,8 @@ import { Booking } from '../entities/booking';
 })
 export class BookingsComponent implements OnInit {
   bookings: Booking[] = [];
+  isChecked?: boolean = false;
+  color: string = '#a9436e';
 
   constructor(private bookingService: BookingService) { }
 

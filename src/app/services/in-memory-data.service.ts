@@ -15,14 +15,14 @@ export class InMemoryDataService implements InMemoryDbService{
     ];
 
     let bookings = [
-      { id:1, rental_id: 1, nrOfPeople: 5 },
-      { id:2, rental_id: 3, nrOfPeople: 3 }
+      { id:1, rental_id: 1, nrOfPeople: 5, imagePath: "../assets/Avenue-de-Camoens-Paris-Eiffel-Tower.jpg", isChecked: false },
+      { id:2, rental_id: 3, nrOfPeople: 3, imagePath: "../assets/London.jpg", isChecked: false }
     ];
 
     return { rentals, bookings };
   }
 
-  //override genId method to ensure that a rental always has an id
+  //override genId method to ensure that a rental/booking always has an id
   genId<T extends Rental | Booking>(myEntities: T[]): number{
     return myEntities.length ? Math.max(...myEntities.map(e => e.id)) + 1 : 0;
   }
