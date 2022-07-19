@@ -20,6 +20,7 @@ export class BookingDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('ngOnInit',this.bookingService.getRentalId());
     this.rental_id = this.bookingService.getRentalId();
   }
 
@@ -34,6 +35,7 @@ export class BookingDialogComponent implements OnInit {
           nrOfPeople: this.nrOfPeople
     }
 
+    console.log(this.rental_id);
     this.bookingService.addBooking(booking).subscribe();
     this.dialogRef.close();
   }

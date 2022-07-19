@@ -35,7 +35,7 @@ export class RentalsSearchComponent implements OnInit {
   }
 
   openDialog(rental_id: number): void {
-    rental_id = this.bookingService.getRentalId();
+    this.bookingService.setRentalId(rental_id);
     this.dialog.open(BookingDialogComponent);
   }
 

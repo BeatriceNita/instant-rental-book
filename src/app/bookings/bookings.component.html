@@ -7,5 +7,6 @@
     <h5>No of people: {{booking.nrOfPeople}}</h5>
     <input type="checkbox" [(ngModel)]="booking.isChecked"> Show photo
     <div *ngIf="booking.isChecked"><img src="{{booking.imagePath}}" alt="Image unavailable"/></div>
+    <button (click)="deleteBooking(booking.id)">Delete</button>
   </li>
 </ul>
