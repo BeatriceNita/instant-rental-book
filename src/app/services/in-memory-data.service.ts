@@ -15,8 +15,8 @@ export class InMemoryDataService implements InMemoryDbService{
     ];
 
     let bookings = [
-      { id:1, rental_id: 1, nrOfPeople: 5, imagePath: "../assets/Avenue-de-Camoens-Paris-Eiffel-Tower.jpg", isChecked: false },
-      { id:2, rental_id: 3, nrOfPeople: 3, imagePath: "../assets/London.jpg", isChecked: false }
+      { id:1, rental_id: 1, email: "b98@yahoo.com", nrOfPeople: 5, imagePath: "../assets/Avenue-de-Camoens-Paris-Eiffel-Tower.jpg", isChecked: false },
+      { id:2, rental_id: 3, email: "b97@yahoo.com", nrOfPeople: 3, imagePath: "../assets/London.jpg", isChecked: false }
     ];
 
     return { rentals, bookings };

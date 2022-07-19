@@ -1,12 +1,13 @@
 <h2>Bookings List</h2>
 <ul>
   <li *ngFor="let booking of bookings" [appHighlight]="color">
-    <h4>Booking no. {{booking.id}}</h4>
-    <h5>Id: {{booking.id}}</h5>
-    <h5>Rental id: {{booking.rental_id}}</h5>
-    <h5>No of people: {{booking.nrOfPeople}}</h5>
+    <h3>Booking no. {{booking.id}}</h3>
+    <h4>Id: {{booking.id}}</h4>
+    <h4>Rental id: {{booking.rental_id}}</h4>
+    <h4>Email: {{booking.email}}</h4>
+    <h4>Nr of people: {{booking.nrOfPeople}}</h4>
     <input type="checkbox" [(ngModel)]="booking.isChecked"> Show photo
     <div *ngIf="booking.isChecked"><img src="{{booking.imagePath}}" alt="Image unavailable"/></div>
-    <button (click)="deleteBooking(booking.id)">Delete</button>
+    <button mat-button (click)="deleteBooking(booking.id)">Delete</button>
   </li>
 </ul>

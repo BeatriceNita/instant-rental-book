@@ -1,14 +1,14 @@
 <div>
   <input #searchBar type="text" placeholder="Search by location..">
-  <button type="button" (click)="search(searchBar.value)">Search</button>
+  <button mat-button (click)="search(searchBar.value)">Search</button>
   <ul>
     <li *ngFor="let rental of rentals$ | async" [appHighlight]="color">
-      <h3>Rental no. {{rental.id}}</h3>
-      <h4>Id: {{rental.id}}</h4>
-      <h4>Location: {{rental.location | uppercase}}</h4>
-      <h4>Capacity: {{rental.capacity}}</h4>
-      <h4>Price: {{rental.price}}</h4>
-      <button class="book" mat-raised-button (click)="openDialog(rental.id)">Book</button>
+      <h2>Rental no. {{rental.id}}</h2>
+      <h3>Id: {{rental.id}}</h3>
+      <h3>Location: {{rental.location | uppercase}}</h3>
+      <h3>Capacity: {{rental.capacity}}</h3>
+      <h3>Price: {{rental.price}}</h3>
+      <button mat-raised-button (click)="openDialog(rental.id, rental.capacity)">Book</button>
     </li>
   </ul>
 </div>

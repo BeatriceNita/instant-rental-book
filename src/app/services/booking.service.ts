@@ -8,6 +8,7 @@ import { Booking } from '../entities/booking';
 export class BookingService {
   private bookingsUrl = 'api/bookings';
   private rental_id!: number;
+  private capacity!: number;
 
   httpOptions = { headers: new HttpHeaders({'Content-Type': 'application/json'}) }
 
@@ -19,6 +20,14 @@ export class BookingService {
 
   setRentalId(rental_id: number): void {
     this.rental_id = rental_id;
+  }
+
+  getCapacity(): number {
+    return this.capacity;
+  }
+
+  setCapacity(capacity: number): void {
+    this.capacity = capacity;
   }
 
   /* GET bookings from the server */
