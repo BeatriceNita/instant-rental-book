@@ -7,6 +7,9 @@
       <mat-error *ngIf="errorHandling('email', 'required')">
         Email is required
       </mat-error>
+      <mat-error *ngIf="errorHandling('email', 'pattern')">
+        Email is invalid
+      </mat-error>
     </mat-form-field>
 
     <p>How many people?</p>
@@ -14,6 +17,9 @@
       <input matInput formControlName="nrOfPeople">
       <mat-error *ngIf="errorHandling('nrOfPeople', 'required')">
         Nr of people is required
+      </mat-error>
+      <mat-error *ngIf="errorHandling('nrOfPeople', 'wrongNrOfPeople')">
+        Nr of people is too big
       </mat-error>
     </mat-form-field>
 
