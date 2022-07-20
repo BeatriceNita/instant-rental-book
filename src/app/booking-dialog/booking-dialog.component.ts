@@ -4,6 +4,7 @@ import { AbstractControl, ValidationErrors, ValidatorFn, FormBuilder, FormGroup,
 
 import { BookingService } from '../services/booking.service';
 import { Booking } from '../entities/booking';
+import { validation } from '../nr-of-people-validator';
 
 @Component({
   selector: 'app-booking-dialog',
@@ -31,14 +32,13 @@ export class BookingDialogComponent implements OnInit {
   ngOnInit() {
     this.rental_id = this.bookingService.getRentalId();
     this.capacity = this.bookingService.getCapacity();
-    console.log(this.capacity);
     this.reactiveForm();
   }
 
   reactiveForm() {
     this.dialogForm = this.formBuilder.group({
-          email: ['', Validators.required],
-          nrOfPeople: ['', Validators.required]
+          email: ['', [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+          nrOfPeople: ['', [Validators.required, validation(this.capacity)]]
     });
   }
 
