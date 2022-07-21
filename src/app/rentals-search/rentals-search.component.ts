@@ -37,7 +37,12 @@ export class RentalsSearchComponent implements OnInit {
   openDialog(rental_id: number, capacity: number): void {
     this.bookingService.setRentalId(rental_id);
     this.bookingService.setCapacity(capacity);
-    this.dialog.open(BookingDialogComponent);
+    this.dialog.open(BookingDialogComponent,{
+        height: '460px',
+        width: '500px',
+        disableClose: true,
+        hasBackdrop: true
+    });
   }
 
   search(term: string){

@@ -4,7 +4,7 @@ import { AbstractControl, ValidationErrors, ValidatorFn, FormBuilder, FormGroup,
 
 import { BookingService } from '../services/booking.service';
 import { Booking } from '../entities/booking';
-import { validation } from '../validation/nr-of-people-validator';
+import { validateNrOfPeople } from '../validation/nr-of-people-validator';
 
 @Component({
   selector: 'app-booking-dialog',
@@ -18,10 +18,6 @@ export class BookingDialogComponent implements OnInit {
   email!: string;
   dialogForm!: FormGroup;
   regexEmail: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-  public errorHandling = (control: string, error: string) => {
-    return this.dialogForm.controls[control].hasError(error);
-  }
 
   constructor(
     public dialogRef: MatDialogRef<BookingDialogComponent>,
@@ -39,7 +35,7 @@ export class BookingDialogComponent implements OnInit {
   reactiveForm() {
     this.dialogForm = this.formBuilder.group({
           email: ['', [Validators.required, Validators.pattern(this.regexEmail)]],
-          nrOfPeople: ['', [Validators.required, validation(this.capacity)]]
+          nrOfPeople: ['', Validators.required]
     });
   }
 

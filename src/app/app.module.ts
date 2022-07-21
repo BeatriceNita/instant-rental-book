@@ -16,6 +16,8 @@ import { RentalsSearchComponent } from './rentals-search/rentals-search.componen
 import { BookingDialogComponent } from './booking-dialog/booking-dialog.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { ErrorHandlingDirective } from './directives/error-handling.directive';
+import { NrOfPeopleValidationDirective } from './directives/nr-of-people-validation.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HighlightDirective } from './directives/highlight.directive';
     DashboardComponent,
     BookingDialogComponent,
     BookingsComponent,
-    HighlightDirective
+    HighlightDirective,
+    ErrorHandlingDirective,
+    NrOfPeopleValidationDirective
   ],
   imports: [
     BrowserModule,
