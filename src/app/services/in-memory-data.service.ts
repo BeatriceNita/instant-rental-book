@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
+import { User } from '../entities/user';
 import { Rental } from '../entities/rental';
 import { Booking } from '../entities/booking';
 
@@ -20,11 +21,15 @@ export class InMemoryDataService implements InMemoryDbService{
       { id: 2, rental_id: 3, email: "b97@yahoo.com", nrOfPeople: 3, imagePath: "../assets/London.jpg", isChecked: false }
     ];
 
-    return { rentals, bookings };
+    let users = [
+      { id: 1, email: "b98@yahoo.com", username: "b98", password: "b98"}
+    ];
+
+    return { rentals, bookings, users };
   }
 
   //override genId method to ensure that a rental/booking always has an id
-  genId<T extends Rental | Booking>(myEntities: T[]): number{
+  genId<T extends Rental | Booking | User>(myEntities: T[]): number{
     return myEntities.length ? Math.max(...myEntities.map(e => e.id)) + 1 : 0;
   }
 }

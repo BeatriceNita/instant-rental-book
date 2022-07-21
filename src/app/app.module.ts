@@ -7,17 +7,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialExampleModule } from './material.module';
+
+import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 import { RentalsComponent } from './rentals/rentals.component';
+import { BookingsComponent } from './bookings/bookings.component';
 import { RentalsSearchComponent } from './rentals-search/rentals-search.component';
 import { BookingDialogComponent } from './booking-dialog/booking-dialog.component';
-import { BookingsComponent } from './bookings/bookings.component';
+
 import { HighlightDirective } from './directives/highlight.directive';
 import { ErrorHandlingDirective } from './directives/error-handling.directive';
 import { NrOfPeopleValidationDirective } from './directives/nr-of-people-validation.directive';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { NrOfPeopleValidationDirective } from './directives/nr-of-people-validat
     BookingsComponent,
     HighlightDirective,
     ErrorHandlingDirective,
-    NrOfPeopleValidationDirective
+    NrOfPeopleValidationDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

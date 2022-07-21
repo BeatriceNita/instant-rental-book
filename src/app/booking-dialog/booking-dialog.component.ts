@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AbstractControl, ValidationErrors, ValidatorFn, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { BookingService } from '../services/booking.service';
 import { Booking } from '../entities/booking';
@@ -14,8 +14,6 @@ import { validateNrOfPeople } from '../validation/nr-of-people-validator';
 export class BookingDialogComponent implements OnInit {
   rental_id!: number;
   capacity!: number;
-  nrOfPeople!: number;
-  email!: string;
   dialogForm!: FormGroup;
   regexEmail: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -29,6 +27,7 @@ export class BookingDialogComponent implements OnInit {
   ngOnInit() {
     this.rental_id = this.bookingService.getRentalId();
     this.capacity = this.bookingService.getCapacity();
+
     this.reactiveForm();
   }
 
