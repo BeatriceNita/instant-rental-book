@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialExampleModule } from './material.module';
 
 import { AppComponent } from './app.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RentalsComponent } from './rentals/rentals.component';
@@ -21,7 +22,6 @@ import { BookingDialogComponent } from './booking-dialog/booking-dialog.componen
 import { HighlightDirective } from './directives/highlight.directive';
 import { ErrorHandlingDirective } from './directives/error-handling.directive';
 import { NrOfPeopleValidationDirective } from './directives/nr-of-people-validation.directive';
-import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { MainComponent } from './main/main.component';
     ErrorHandlingDirective,
     NrOfPeopleValidationDirective,
     LoginComponent,
-    MainComponent
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
