@@ -21,6 +21,7 @@ import { BookingDialogComponent } from './booking-dialog/booking-dialog.componen
 import { HighlightDirective } from './directives/highlight.directive';
 import { ErrorHandlingDirective } from './directives/error-handling.directive';
 import { NrOfPeopleValidationDirective } from './directives/nr-of-people-validation.directive';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { NrOfPeopleValidationDirective } from './directives/nr-of-people-validat
     HighlightDirective,
     ErrorHandlingDirective,
     NrOfPeopleValidationDirective,
-    LoginComponent
+    LoginComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

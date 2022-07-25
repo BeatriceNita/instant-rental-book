@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { Router } from '@angular/router';
+
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -13,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,11 +31,9 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    this.authService.login(this.loginForm.get('username')!.value, this.loginForm.get('password')!.value);
-
-    let auth = localStorage.getItem('isAuthenticated');
-
-    (auth) ? console.log('auth was successful') : console.log('auth failed');
+    this.authService.login(this.loginForm.get('username')!.value,
+                           this.loginForm.get('password')!.value)
+                    .subscribe(() => this.router.navigate(['/dashboard']));
   }
 
 }
