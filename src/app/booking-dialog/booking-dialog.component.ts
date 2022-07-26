@@ -38,6 +38,10 @@ export class BookingDialogComponent implements OnInit {
     });
   }
 
+//   get email() {
+//     return this.dialogForm
+//   }
+
   onAddBooking() {
     let booking = {
           id: 3,

@@ -22,6 +22,9 @@ import { BookingDialogComponent } from './booking-dialog/booking-dialog.componen
 import { HighlightDirective } from './directives/highlight.directive';
 import { ErrorHandlingDirective } from './directives/error-handling.directive';
 import { NrOfPeopleValidationDirective } from './directives/nr-of-people-validation.directive';
+import { AdDirective } from './directives/ad.directive';
+import { AdBannerComponent } from './ad-banner/ad-banner.component';
+import { HolidayAdComponent } from './holiday-ad/holiday-ad.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { NrOfPeopleValidationDirective } from './directives/nr-of-people-validat
     ErrorHandlingDirective,
     NrOfPeopleValidationDirective,
     LoginComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    AdDirective,
+    AdBannerComponent,
+    HolidayAdComponent
   ],
   imports: [
     BrowserModule,
