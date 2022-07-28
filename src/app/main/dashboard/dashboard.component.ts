@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AdItem, AdService } from '../shared/dynamic-ad-banner/';
+import { AdItem, AdService } from '../../shared/dynamic-ad-banner/';
 
 @Component({
   selector: 'app-dashboard',

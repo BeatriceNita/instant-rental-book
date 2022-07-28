@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Add Booking</h2>
+<div mat-dialog-content>
+  <form [formGroup]="dialogForm" (ngSubmit)="onAddBooking()">
+    <p>Please type your email: </p>
+    <mat-form-field appearance="fill">
+      <input matInput formControlName="email">
+      <mat-error [appErrorHandling]="dialogForm"
+                 [control]="'email'"
+                 [error]="'required'">
+        Email is required
+      </mat-error>
+      <mat-error [appErrorHandling]="dialogForm"
+                 [control]="'email'"
+                 [error]="'pattern'">
+        Email is invalid
+      </mat-error>
+    </mat-form-field>
+
+    <p>How many people?</p>
+    <mat-form-field appearance="fill">
+      <input matInput formControlName="nrOfPeople" [appNrOfPeopleValidation]="capacity">
+      <mat-error [appErrorHandling]="dialogForm"
+                 [control]="'nrOfPeople'"
+                 [error]="'required'">
+        Nr of people is required
+      </mat-error>
+      <mat-error [appErrorHandling]="dialogForm"
+                 [control]="'nrOfPeople'"
+                 [error]="'wrongNrOfPeople'">
+        Nr of people needs to be smaller than capacity
+      </mat-error>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-button type="submit" [disabled]="!dialogForm.valid">Add</button>
+      <button mat-button mat-dialog-close (click)="onClose()">Close</button>
+    </div>
+
+    <p>Form status: {{dialogForm.status}} </p>
+  </form>
+</div>

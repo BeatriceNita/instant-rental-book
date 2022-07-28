@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -11,15 +11,15 @@ import { AuthService } from '../services/auth.service';
 export class ToolbarComponent implements OnInit {
 
   constructor(
-      private authService: AuthService,
-      private router: Router
-    ) { }
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-    ngOnInit(): void {}
+  ngOnInit(): void {}
 
-    onLogout() {
-      this.authService.logout()
-                      .subscribe(() => this.router.navigate(['/login']));
-    }
+  onLogout() {
+    this.authService.logout()
+                    .subscribe(() => this.router.navigate(['/login']));
+  }
 
 }
