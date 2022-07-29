@@ -1,7 +1,7 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-//import { DynamicAdBannerModule } from '../dynamic-ad-banner/dynamic-ad-banner.module';
+import { RouterModule, Routes } from '@angular/router';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,7 +21,8 @@ import { HighlightDirective } from './directives/highlight.directive';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports: [
     ToolbarComponent,
@@ -30,7 +31,6 @@ import { HighlightDirective } from './directives/highlight.directive';
     BookingsComponent,
     BookingDialogComponent,
     HighlightDirective
-  ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  ]
 })
 export class MainModule { }

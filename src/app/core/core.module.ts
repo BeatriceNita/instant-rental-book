@@ -1,6 +1,5 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from './modules/app-routing.module';
+import { CommonModule } from '@angular/common'
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
@@ -16,14 +15,13 @@ import { LoginComponent } from './auth/components/login.component';
   imports: [
     CommonModule,
     SharedModule,
-    AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
        InMemoryDataService, { dataEncapsulation: false }
     )
   ],
   exports: [
-    AppRoutingModule
+    LoginComponent
   ]
 })
 export class CoreModule {
