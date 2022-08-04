@@ -5,9 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material.module';
 
-import { AdDirective, AdBannerComponent, AdHolidayComponent } from './dynamic-ad-banner/';
 import { ErrorHandlingDirective } from './validation/directives/error-handling.directive';
 import { NrOfPeopleValidationDirective } from './validation/directives/nr-of-people-validation.directive';
+import { AdDirective } from './dynamic-ad-banner/directives/ad.directive';
+import { AdBannerComponent } from './dynamic-ad-banner/components/ad-banner/ad-banner.component';
+import { AdHolidayComponent } from './dynamic-ad-banner/components/ad-holiday/ad-holiday.component';
 
 @NgModule({
   imports: [

@@ -1,10 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
 
 import { of } from 'rxjs';
 import { Booking } from '../entities/booking';
 import { BookingsComponent } from './bookings.component';
 import { BookingService } from '../services/booking.service';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 
 describe('BookingsComponent', () => {
   let component: BookingsComponent;
@@ -28,8 +29,8 @@ describe('BookingsComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [ BookingsComponent ],
-      imports: [ HttpClientModule ],
-      providers: [{ provide:BookingService, useValue: bookingServiceStub }]
+      providers: [{ provide:BookingService, useValue: bookingServiceStub }],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
 

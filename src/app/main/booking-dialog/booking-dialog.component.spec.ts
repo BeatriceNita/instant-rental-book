@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookingDialogComponent } from './booking-dialog.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('BookingDialogComponent', () => {
   let component: BookingDialogComponent;
@@ -18,7 +19,8 @@ describe('BookingDialogComponent', () => {
       providers: [
         { provide: MatDialogRef, useValue: {} },
         { provide: MAT_DIALOG_DATA, useValue: {} }
-      ]
+      ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
 

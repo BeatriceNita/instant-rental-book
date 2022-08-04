@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy, Input, ViewChild } from '@angular/core';
+import { AdDirective } from '../../directives/ad.directive';
+import { AdItem } from '../../entities/ad-item';
+import { Advert } from '../../entities/advert';
 
-import { AdItem, Advert, AdDirective } from '../../';
 
 @Component({
   selector: 'app-ad-banner',
@@ -11,7 +13,7 @@ export class AdBannerComponent implements OnInit, OnDestroy {
   @Input() ads: AdItem[] = [];
   @ViewChild(AdDirective, {static: true}) adHost!: AdDirective;
 
-  interval!: number;
+  interval!: ReturnType<typeof setInterval>;
   currentAdIndex = -1;
 
   ngOnInit(): void {

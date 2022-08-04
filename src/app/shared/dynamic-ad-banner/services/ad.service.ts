@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-
-import { AdItem } from '../';
-import { AdHolidayComponent } from '../';
+import { AdHolidayComponent } from '../components/ad-holiday/ad-holiday.component';
+import { AdItem } from '../entities/ad-item';
 
 @Injectable({ providedIn: 'root' })
 export class AdService {

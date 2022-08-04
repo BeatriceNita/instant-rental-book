@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-import { Advert } from '../../../dynamic-ad-banner/';
+import { Advert } from '../../entities/advert';
 
 @Component({
   selector: 'app-ad-holiday',
@@ -8,5 +7,8 @@ import { Advert } from '../../../dynamic-ad-banner/';
   styleUrls: ['./ad-holiday.component.css']
 })
 export class AdHolidayComponent implements Advert {
-  @Input() data: any;
+  @Input() data = {
+    headline: '',
+    body: ''
+  };
 }
