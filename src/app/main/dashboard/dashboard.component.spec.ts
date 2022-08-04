@@ -45,8 +45,4 @@ describe('DashboardComponent', () => {
   it('should have ads', () => {
     expect(adServiceSpy.getAds).toHaveBeenCalled();
   });
-
-  // it('should have 2 ads', () => {
-  //   expect(adServiceSpy.getAds.length).toBe(1);
-  // });
 });
