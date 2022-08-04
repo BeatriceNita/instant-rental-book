@@ -15,7 +15,7 @@ describe('BookingDialogComponent', () => {
     component.dialogForm.controls['nrOfPeople'].setValue(nrOfPeople);
   }
 
-  let rental_id: number = 3;
+  let rental_id: number = 2;
   let capacity: number = 5;
 
   beforeEach(async () => {
