@@ -64,7 +64,7 @@ describe('BookingDialogComponent', () => {
   });
 
   it('Form invalid should be true when nrOfPeople is invalid', () => {
-    updateForm('beatrice.nita98@yahoo.com', '20');
+    updateForm('beatrice.nita98@yahoo.com', '30');
     expect(component.dialogForm.invalid).toBeTruthy();
   });
 });
