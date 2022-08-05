@@ -59,7 +59,7 @@ describe('BookingDialogComponent', () => {
   });
 
   it('Form invalid should be true when email is invalid', () => {
-    updateForm('beatrice@yahoo', '3');
+    updateForm('beatrice@yaho', '3');
     expect(component.dialogForm.invalid).toBeTruthy();
   });
 
