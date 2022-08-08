@@ -1,33 +1,35 @@
 import { of } from 'rxjs';
-import { fakeAsync, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { BookingService } from './booking.service';
 import { Booking } from '../entities/booking';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 describe('BookingService', () => {
-  let service: BookingService;
-  let bookingServiceSpy: jasmine.SpyObj<BookingService>;
-
-  let expectedBookings: Booking[] = [
-    { id: 1, rental_id: 2, email: "b98@yahoo.com", nrOfPeople: 5 }
-  ]
+  let bookingService: BookingService;
+  let httpClientSpy: jasmine.SpyObj<HttpClient>;
 
   beforeEach(() => {
-    bookingServiceSpy = jasmine.createSpyObj('BookingService', ['getBookings']);
-    bookingServiceSpy.getBookings.and.returnValue(of(expectedBookings));
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get', 'handleError']);
 
     TestBed.configureTestingModule({
-      providers: [{ provide:BookingService, useValue: bookingServiceSpy }]
+      providers: [{ provide: HttpClient, useValue: httpClientSpy }]
     });
-    service = TestBed.inject(BookingService);
-    bookingServiceSpy = TestBed.inject(BookingService) as jasmine.SpyObj<BookingService>;
+
+    bookingService = TestBed.inject(BookingService);
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(bookingService).toBeTruthy();
   });
 
   it('should get expected bookings', () => {
-    bookingServiceSpy.getBookings().subscribe({
+    let expectedBookings: Booking[] = [
+      { id: 1, rental_id: 2, email: "b98@yahoo.com", nrOfPeople: 5 }
+    ];
+    
+    httpClientSpy.get.and.returnValue(of(expectedBookings));
+
+    bookingService.getBookings().subscribe({
       next: bookings => {
         expect(bookings)
           .withContext('expected bookings')
