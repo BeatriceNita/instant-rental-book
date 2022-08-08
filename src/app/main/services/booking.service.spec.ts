@@ -24,7 +24,7 @@ describe('BookingService', () => {
 
   it('should get expected bookings', () => {
     let expectedBookings: Booking[] = [
-      { id: 1, rental_id: 2, email: "bea98@yahoo.com", nrOfPeople: 5 }
+      { id: 1, rental_id: 2, email: "b98@yahoo.com", nrOfPeople: 5 }
     ];
     
     httpClientSpy.get.and.returnValue(of(expectedBookings));
