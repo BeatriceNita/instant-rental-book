@@ -8,7 +8,7 @@ describe('BookingService', () => {
   let bookingServiceSpy: jasmine.SpyObj<BookingService>;
 
   let expectedBookings: Booking[] = [
-    { id: 1, rental_id: 1, email: "b98@yahoo.com", nrOfPeople: 5 }
+    { id: 1, rental_id: 2, email: "b98@yahoo.com", nrOfPeople: 5 }
   ]
 
   beforeEach(() => {
