@@ -2,7 +2,7 @@ import { of } from 'rxjs';
 import { TestBed } from '@angular/core/testing';
 import { BookingService } from './booking.service';
 import { Booking } from '../entities/booking';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 describe('BookingService', () => {
   let bookingService: BookingService;
@@ -46,15 +46,15 @@ describe('BookingService', () => {
   });
 
   it('should add new booking', () => {
-    const booking = { id: 2, rental_id: 3, email: "b97@yahoo.com", nrOfPeople: 7 }
+    const newBooking = { id: 2, rental_id: 3, email: "b97@yahoo.com", nrOfPeople: 7 }
 
-    httpClientSpy.post.and.returnValue(of(booking));
+    httpClientSpy.post.and.returnValue(of(newBooking));
 
-    bookingService.addBooking(booking).subscribe({
-      next: bookings => {
-        expect(bookings)
+    bookingService.addBooking(newBooking).subscribe({
+      next: booking => {
+        expect(booking)
           .withContext('added new booking')
-          .toEqual(booking);
+          .toEqual(newBooking);
       }
     });
 
